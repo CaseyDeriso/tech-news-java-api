@@ -47,4 +47,15 @@ public class UserController {
 		repository.save(user);
 		return user;
 	}
+
+	@PutMapping("/api/users/{id}")
+	public User updateUser(@PathVariable int id, @RequestBody User user) {
+		User tempUser = repository.getOne(id);
+
+		if (!tempUser.equals(null)) {
+			user.setId(tempUser.getId());
+			repository.save(user);
+		}
+		return user;
+	}
 }
