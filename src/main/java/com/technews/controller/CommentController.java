@@ -39,5 +39,5 @@ public class CommentController {
 	public void deleteComment(@PathVariable int id) {
 		repository.deleteById(id);
 	}
-	
+
 }
